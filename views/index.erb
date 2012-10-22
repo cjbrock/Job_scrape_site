@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<h1>Job Board Scrape</h1>
+<link href="css/simple.css" type="text/css" rel="stylesheet">
+</head>
+
+<% domain = "http://seeker.dice.com/" %>
+<table align=center>
+  <tr align=center>
+  <th>Title</th>
+  <th>Job Link</th>
+  <th>Location</th>
+  <th>Telecommute?</th>
+<% @positions.each do |position| %>
+<tr>
+  <td><%= position.title %></td>
+  <td><a href="<%= domain + position.job_link %>">View Job</a></td>
+  <td align=center><%= position.location %></td>
+  <td align=center><%= position.telecommute %></td>
+</tr>
+<% end %>
+</table>
