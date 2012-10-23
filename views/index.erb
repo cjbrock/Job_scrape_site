@@ -5,20 +5,22 @@
 <link href="css/simple.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<h1>Job Board Scrape</h1>
+<h1>Flatiron Job Board</h1>
 <% domain = "http://seeker.dice.com/" %>
-<table align=center>
-  <tr align=center>
-  <th>Title</th>
+<table class="center">
+  <tr class="position">
+  <th> </th>
+  <th class="different">Title</th>
   <th>Job Link</th>
   <th>Location</th>
   <th>Telecommute?</th>
 <% @positions.each do |position| %>
 <tr>
+  <td><img src="images/ruby.png" alt="Ruby" height="35" width="35">
   <td><%= position.title %></td>
   <td><a href="<%= domain + position.job_link %>">View Job</a></td>
-  <td align=center><%= position.location %></td>
-  <td align=center><%= position.telecommute %></td>
+  <td class="position"><%= position.location %></td>
+  <td class="position"><%= position.telecommute %></td>
 </tr>
 <% end %>
 </table>

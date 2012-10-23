@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require './position'
-#require "sinatra/reloader"
+require 'sinatra/reloader' if development?
 
 
 get "/"  do

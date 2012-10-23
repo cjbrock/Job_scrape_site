@@ -14,8 +14,6 @@ attr_accessor :id, :title, :job_link, :location, :description, :telecommute
                     telecommute
   }
 
-
-
   JOBS_INDEX = {
     0 => :ID_INDEX,
     1 => :TITLE_INDEX,
@@ -36,12 +34,6 @@ attr_accessor :id, :title, :job_link, :location, :description, :telecommute
       position = Position.new
       JOBS_INDEX.each do |key_index, attribute|
         method = attribute.to_s.gsub("_INDEX", "").downcase
-        # position.id = 1
-        # position.title = "test"
-        # position.job_link = "test"
-        # position.location = "test"
-        # position.description = "test"
-        # position.telecommute = "test"
         position.send("#{method}=", job[key_index])
       end  
       positions << position
